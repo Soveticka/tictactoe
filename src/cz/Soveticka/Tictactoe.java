@@ -172,19 +172,19 @@ public class Tictactoe {
             }
             foundInDiagonal = 0;
 
-            for (int i = gameBoard.length - 1; i > 0; i--) {
+            for (int iBack = gameBoard.length - 1, iFront = 0; iFront < gameBoard.length; iBack--, iFront++) {
                 if(win){
                     break;
                 }
-                if (gameBoard[i][i].equals(playerChar)) {
+                if (gameBoard[iFront][iBack].equals(playerChar)) {
                     foundInDiagonal++;
                 }
                 if (playerChar.equals("O")) {
-                    if (gameBoard[i][i].equals(playerChars[1])) {
+                    if (gameBoard[iFront][iBack].equals(playerChars[1])) {
                         break;
                     }
                 } else {
-                    if (gameBoard[i][i].equals(playerChars[0])) {
+                    if (gameBoard[iFront][iBack].equals(playerChars[0])) {
                         break;
                     }
                 }
